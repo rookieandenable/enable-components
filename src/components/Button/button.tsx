@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React, { ButtonHTMLAttributes, FC, AnchorHTMLAttributes } from "react";
 
-export type ButtonSize = 'large' | 'small'
+export type ButtonSize = 'lg' | 'sm'
 export type ButtonType = 'primary' | 'default' | 'danger' | 'link'
 
 interface BaseButtonProps {
@@ -13,9 +13,10 @@ interface BaseButtonProps {
   href?: string;
 }
 
+// 获取Button a 标签的所有属性
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
 type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
-type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 const Button: FC<ButtonProps> = (props) => {
   const {
@@ -41,7 +42,8 @@ const Button: FC<ButtonProps> = (props) => {
 }
 
 Button.defaultProps = {
-  disabled: false
+  disabled: false,
+  btnType: 'default'
 }
 
 export default Button

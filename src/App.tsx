@@ -7,8 +7,8 @@ function App() {
       <header className="App-header">
         <Button>Hello</Button>
         <Button disabled>Disabled Button</Button>
-        <Button btnType='primary' size='large'>Large Primary</Button>
-        <Button btnType='danger' size='small'>Small Danger</Button>
+        <Button btnType='primary' size='lg'>Large Primary</Button>
+        <Button btnType='danger' size='sm'>Small Danger</Button>
         <Button btnType='link' href='http://www.baidu.com'>Baidu Link</Button>
         <Button btnType='link' disabled href='http://www.baidu.com'>Baidu Link</Button>
         <p>
