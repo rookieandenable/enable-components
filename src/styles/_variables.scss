@@ -1,5 +1,3 @@
-// !default 表示允许覆盖
-
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -32,6 +30,7 @@ $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
+// 这里是为了后续循环添加样式，不用一个个手写了
 $theme-colors: 
 (
   "primary":    $primary,
@@ -88,13 +87,6 @@ $body-text-align:           null !default;
 
 // Spacing
 $spacer: 1rem !default;
-
-$headings-margin-bottom:      $spacer / 2 !default;
-$headings-font-family:        null !default;
-$headings-font-style:         null !default;
-$headings-font-weight:        500 !default;
-$headings-line-height:        1.2 !default;
-$headings-color:              null !default;
 
 // Paragraphs
 
@@ -215,6 +207,19 @@ $btn-border-radius-lg:        $border-radius-lg !default;
 $btn-border-radius-sm:        $border-radius-sm !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
+// alert
+// alert基本属性
+$alert-width:                  25rem !default;
+$alert-margin:                 1rem !default;
+$alert-padding-y:              .875rem !default;
+$alert-padding-x:              .875rem !default;
+$alert-border-width:           $border-width !default;
+$alert-font-size:              $font-size-base !default;
+$alert-font-weight:            400;
+$alert-font-family:            $font-family-base !default;
+$alert-line-height:            $line-height-base !default;
+$alert-border-radius:          $border-radius !default;
 
 // menu
 $menu-border-width:            $border-width !default;
