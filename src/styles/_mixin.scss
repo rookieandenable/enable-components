@@ -1,9 +1,9 @@
-@mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
+// button的重用方法
+@mixin button-size($padding-y, $padding-x, $font-size, $border-radius){
   padding: $padding-y $padding-x;
   font-size: $font-size;
   border-radius: $border-radius;
 }
-
 @mixin button-style(
   $background,
   $border,
@@ -20,13 +20,14 @@
       background: $hover-background;
       border-color: $hover-border;
   }
-  &:focus, &.focus {
+  &:focus,
+  &.focus {
       color: $hover-color;
       background: $hover-background;
       border-color: $hover-border;
-      outline: 0;
   }
-  &:disabled, &.disabled {
+  &:disabled,
+  &.disabled {
       color: $color;
       background: $background;
       border-color: $border;
@@ -34,13 +35,16 @@
 }
 
 @mixin alert-style(
+  $background,
   $border,
-  $background: lighten($border, 40%)
+  $color
 ) {
+  color: $color;
+  background: $background;
   border-color: $border;
-  background-color: $background;
 }
 
+// 动画效果的mixin
 @mixin zoom-animation(
 $direction: 'top',
 $scaleStart: scaleY(0),
@@ -66,4 +70,15 @@ $origin: center top,
   transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms, opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
   transform-origin: $origin;
 }
+}
+
+// 边框的样式
+@mixin border-right-radius($radius) {
+border-top-right-radius: $radius;
+border-bottom-right-radius: $radius;
+}
+
+@mixin border-left-radius($radius) {
+border-top-left-radius: $radius;
+border-bottom-left-radius: $radius;
 }

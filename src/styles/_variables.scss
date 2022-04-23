@@ -1,3 +1,4 @@
+// 中性颜色 default关键字，可以被覆盖，默认的颜色
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -10,6 +11,7 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
+// 基础的自然色
 $blue:    #0d6efd !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
@@ -21,16 +23,17 @@ $green:   #52c41a !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-800 !default;
 
-// 这里是为了后续循环添加样式，不用一个个手写了
+// 系统色板
+$primary:   $blue !default;
+$secondary: $gray-600 !default;
+$success:   $green !default;
+$info:      $cyan !default;
+$warning:   $yellow !default;
+$danger:    $red !default;
+$light:     $gray-100 !default;
+$dark:      $gray-800 !default;
+
 $theme-colors: 
 (
   "primary":    $primary,
@@ -43,6 +46,7 @@ $theme-colors:
   "dark":       $dark
 );
 
+// 字体系统的变量
 $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
@@ -74,7 +78,7 @@ $h4-font-size:                $font-size-base * 1.5 !default;
 $h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
 
-// 链接
+// 链接  darken让颜色变暗百分之多少
 $link-color:                              $primary !default;
 $link-decoration:                         none !default;
 $link-hover-color:                        darken($link-color, 15%) !default;
@@ -87,6 +91,13 @@ $body-text-align:           null !default;
 
 // Spacing
 $spacer: 1rem !default;
+
+$headings-margin-bottom:      $spacer / 2 !default;
+$headings-font-family:        null !default;
+$headings-font-style:         null !default;
+$headings-font-weight:        500 !default;
+$headings-line-height:        1.2 !default;
+$headings-color:              null !default;
 
 // Paragraphs
 
@@ -208,18 +219,15 @@ $btn-border-radius-sm:        $border-radius-sm !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
-// alert
-// alert基本属性
-$alert-width:                  25rem !default;
-$alert-margin:                 1rem !default;
-$alert-padding-y:              .875rem !default;
-$alert-padding-x:              .875rem !default;
-$alert-border-width:           $border-width !default;
-$alert-font-size:              $font-size-base !default;
-$alert-font-weight:            400;
-$alert-font-family:            $font-family-base !default;
-$alert-line-height:            $line-height-base !default;
-$alert-border-radius:          $border-radius !default;
+// alert相关样式
+$alert-padding-y:             1rem !default;
+$alert-padding-x:             1.375rem !default;
+$alert-border-radius:         $border-radius !default;
+$alert-width:                 500px !default;
+$alert-margin-y:              0.275rem !default;
+$alert-margin-x:              0.275rem !default;
+
+
 
 // menu
 $menu-border-width:            $border-width !default;
@@ -237,6 +245,20 @@ $menu-item-disabled-color:     $gray-600 !default;
 //sub-menu
 //submenu
 $submenu-box-shadow: 0 2px 4px 0 rgba(0,0,0,.12), 0 0 6px 0 rgba(0,0,0,.04);
+
+// tabs
+$tab-border-width:            $border-width !default;
+$tab-border-color:            $border-color !default;
+$tab-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
+$tab-transition:              color .15s ease-in-out, border-color .15s ease-in-out !default;
+
+// tab-item
+$tab-item-padding-y:          .5rem !default;
+$tab-item-padding-x:          1rem !default;
+$tab-item-active-color:       $primary !default;
+$tab-item-active-border-width: 2px !default;
+$tab-item-disabled-color:     $gray-600 !default;
+$tab-item-card-active-border-width  : 1px !default;
 
 //input
 $input-padding-y:                       $btn-padding-y !default;

@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
+    "@storybook/addon-info": "^5.3.21",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
@@ -70,7 +71,8 @@
     "@storybook/node-logger": "^6.4.22",
     "@storybook/preset-create-react-app": "^4.1.0",
     "@storybook/react": "^6.4.22",
-    "@storybook/testing-library": "^0.0.10",
+    "@storybook/testing-library": "^0.0.11",
+    "@types/storybook__addon-info": "^5.2.4",
     "webpack": "^5.72.0"
   }
 }
