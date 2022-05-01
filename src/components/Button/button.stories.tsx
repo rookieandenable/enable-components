@@ -22,7 +22,7 @@ const buttonWithType = () => (
   </Fragment>
 )
 
-storiesOf('按钮 button', module)
+storiesOf('Button 按钮', module)
   .add('默认 Button', defaultButton)
   .add('不同尺寸的 Button', buttonWithSize)
   .add('不同样式的 Button', buttonWithType)

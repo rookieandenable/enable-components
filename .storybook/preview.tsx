@@ -30,10 +30,10 @@ const decorations = (Story: any) => (
 
 addDecorator(decorations)
 
-export default {
-  title: 'Component',
-  decorators: [withInfo],
-}
+// export default {
+//   title: 'Component',
+//   decorators: [withInfo],
+// }
 
 addParameters({info: { inline: true, header: false}})
 

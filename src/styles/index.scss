@@ -1,19 +1,31 @@
-// 下划线命名表示不编辑成css，用于导入 -- 这主要是方便sass的模块化
-
 // config
-@import 'variables';
-
+@import "./variables";
 // layout
-@import 'reboot';
+@import "./reboot";
 
 // mixin
-@import 'mixin';
+@import "./mixin";
 
 // animation
-@import 'animation';
+@import './animation';
 
 // Button
-@import '../components/Button/style';
+@import "../components//Button/style";
 
 // Menu
-@import '../components/Menu/style';
+@import "../components/Menu/style";
+
+// Icon
+@import "../components/Icon/style";
+
+// Input
+@import "../components/Input/style";
+
+// AutoComplete
+@import "../components/AutoComplete/style";
+
+// Upload
+@import "../components/Upload/style";
+
+// Progress
+@import "../components/Progress/style";

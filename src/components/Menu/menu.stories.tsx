@@ -95,7 +95,7 @@ const subMenuOthers = () => {
   </Fragment>
 }
 
-storiesOf('Menu Components', module)
+storiesOf('Menu 导航菜单', module)
   .add('Menu', defaultMenu)
   .add('不同mode的 Menu', modeMenu)
   .add('subMenu', subMenuComponent)

@@ -1,58 +1,33 @@
-import React, { FC, useState } from 'react';
-import Button from './components/Button/button';
-import Menu from './components/Menu/menu';
-import MenuItem from './components/Menu/menuItem';
-import SubMenu from './components/Menu/subMenu';
+import { ChangeEvent, FC } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import Transition from './components/Transition/transition';
+import axios from 'axios';
 
 library.add(fas)
 
 const App: FC = () => {
-  const [show, setShow] = useState(false)
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files
+    if (files) {
+      const uploadFile = files[0]
+      const formData = new FormData()
+      formData.append(uploadFile.name, uploadFile)
+      axios.post('https://jsonplaceholder.typicode.com/posts', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then(res => {
+        console.log(res);
+      })
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <Menu>
-          <MenuItem>default</MenuItem>
-          <MenuItem disabled>disabled</MenuItem>
-          <MenuItem>active</MenuItem>
-          <SubMenu title='dropdown'>
-            <MenuItem>drop1</MenuItem>
-            <MenuItem>drop2</MenuItem>
-          </SubMenu>
-        </Menu>
-        <Button onClick={() => { setShow(!show) }}>Hello</Button>
-        <Button disabled>Disabled Button</Button>
-        <Button btnType='primary' size='lg'>Large Primary</Button>
-        <Button btnType='danger' size='sm'>Small Danger</Button>
-        <Button btnType='link' href='http://www.baidu.com'>Baidu Link</Button>
-        <Button btnType='link' disabled href='http://www.baidu.com'>Baidu Link</Button>
-        <Transition
-          in={show}
-          timeout={300}
-          animation='zoom-in-top'
-        >
-          <div>
-            <p><code>11111fjafjejgvjfjs</code></p>
-            <p><code>11111fjafjejgvjfjs</code></p>
-            <p><code>11111fjafjejgvjfjs</code></p>
-            <p><code>11111fjafjejgvjfjs</code></p>
-            <p><code>11111fjafjejgvjfjs</code></p>
-            <p><code>11111fjafjejgvjfjs</code></p>
-          </div>
-        </Transition>
-        <Transition
-          in={show}
-          timeout={300}
-          animation='zoom-in-top'
-        >
-          <div>
-            <Button btnType='primary' size='lg'>Large Primary</Button>
-          </div>
-        </Transition>
-      </header>
+    <div className="App" style={{marginTop: '100px', marginLeft: '100px'}}>
+      {/* <form method='post' encType='multipart/form-data' action='https://jsonplaceholder.typicode.com/posts'>
+        <input type='file' name='myFile'/>
+        <button type='submit'>submit</button>
+      </form> */}
+      <input type='file' name='myFile' onChange={handleFileChange}/>
     </div>
   );
 }
