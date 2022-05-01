@@ -1,4 +1,4 @@
-import { RefObject, useEffect } from "react"
+import React, { RefObject, useEffect } from "react"
 
 export function useClickOutSide(ref: RefObject<HTMLElement>, handle: Function) {
   useEffect(() => {
