@@ -14,7 +14,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export const Input: FC<InputProps> = (props) => {
+const Input: FC<InputProps> = (props) => {
   const {
     disabled,
     size,

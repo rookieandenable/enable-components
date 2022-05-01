@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { useState } from '@storybook/addons'
-import { Input } from './input'
+import Input from './input'
 import Icon from '../Icon/icon'
 
 const defaultInput = () => {
