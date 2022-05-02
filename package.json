@@ -8,10 +8,10 @@
     "react",
     "components"
   ],
-  "homepage": "https://gitee.com/turnintolight/enable-components",
+  "homepage": "https://rookieandenable.github.io/enablesun",
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/turnintolight/enable-components"
+    "url": "https://github.com/rookieandenable/enable-components"
   },
   "main": "dist/index.js",
   "module": "dist/index.js",
