@@ -1,19 +1,27 @@
-name: GitHub Actions Build and Deploy
+name: react components Node CI
+
 on:
   push:
-    branches:
-      - master
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+    branches: [ master ]
 
-    - name: Build and Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: storybook-static
-        BUILD_SCRIPT: npm run build-storybook
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: stable
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Build and Deploy
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: storybook-static
+          BUILD_SCRIPT: npm run build-storybook
