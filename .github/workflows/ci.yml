@@ -2,7 +2,8 @@ name: react components Node CI
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
 
 jobs:
   build:
@@ -11,10 +12,10 @@ jobs:
 
     strategy:
       matrix:
-        node-version: stable
+        node-version: "stable"
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@master
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
