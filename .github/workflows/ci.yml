@@ -1,28 +1,18 @@
-name: react components Node CI
-
+name: GitHub Actions Build and Deploy
 on:
   push:
     branches:
       - master
-
 jobs:
-  build:
-
+  build-and-deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: "stable"
-
     steps:
-      - uses: actions/checkout@master
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Build and Deploy
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: storybook-static
-          BUILD_SCRIPT: npm run build-storybook
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Build and Deploy
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: storybook-static
+        BUILD_SCRIPT: npm run build-storybook
