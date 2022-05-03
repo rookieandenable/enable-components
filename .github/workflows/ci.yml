@@ -16,15 +16,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          persist-credentials: false
+          ref: master
 
+      - name: cache
+        uses: actions/cache@v2
+        with:
+          path: ~./npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: use node version
+        uses: actions/setup-node@v1
+        with: 
+          node-version: 16
       # 生成静态文件
       - name: Build
         run: npm install && npm run build-storybook
 
       # 部署到 GitHub Pages
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3-test
+        uses: peaceiris/actions-gh-pages@v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
