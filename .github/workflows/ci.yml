@@ -8,11 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Install and Build
-        run: |
-          npm install
-          npm run build
-          npm run build-storybook
 
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -20,4 +15,4 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
         FOLDER: storybook-static
-        BUILD_SCRIPT: npm run build-storybook
+        BUILD_SCRIPT: npm run storybook
