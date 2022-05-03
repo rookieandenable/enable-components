@@ -1,4 +1,4 @@
-name: GitHub Actions Build and Deploy
+name: Build and Deploy
 on:
   push:
     branches:
@@ -16,6 +16,6 @@ jobs:
 
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.3
-        witch:
+        env:
           branch: gh-pages
           folder: storybook-static
