@@ -8,8 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - name: Install and Build
+        run: |
+          npm install
+          npm run build
+          npm run build-storybook
+
     - name: Build and Deploy
-      uses: actions/checkout@master
+      uses: JamesIves/github-pages-deploy-action@releases/v3
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
