@@ -10,7 +10,7 @@ jobs:
       - name: checkout master
         uses: actions/checkout@master
 
-      - name: build name
+      - name: build
         run: |
           npm install
           npm run build-storybook
@@ -19,4 +19,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         env:
           branch: gh-pages
-          folder: storybook-static
+          folder: /storybook-static
