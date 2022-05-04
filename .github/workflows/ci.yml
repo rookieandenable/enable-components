@@ -35,7 +35,8 @@ jobs:
 
       # 部署到 GitHub Pages
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@3.1.5
         with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_dir: storybook-static
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          FOLDER: storybook-static
+          BRANCH: gh-pages
