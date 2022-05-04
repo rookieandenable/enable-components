@@ -30,7 +30,7 @@ jobs:
         with: 
           node-version: 16
       # 生成静态文件
-      - name: Build
+      - name: Build1
         run: npm install && npm run build-storybook
 
       # 部署到 GitHub Pages
